@@ -6,6 +6,7 @@ import { Noto } from "./fonts";
 import clsx from "clsx";
 import Link from "next/link";
 import { NavLinks } from "./nav-links";
+import Search from "./search";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,7 +47,7 @@ export default function RootLayout({
             <div className="flex  flex-1 flex-row justify-between bg-slate-900 drop-shadow-md p-3 rounded-2xl items-center ">
               <Link
                 href="/"
-                className="flex flex-row items-center space-x-2 bg-pink-300 hover:bg-pink-600 drop-shadow-sm pr-3 rounded-xl"
+                className="flex flex-row items-center space-x-2 bg-pink-300 hover:bg-pink-700 hover:text-white drop-shadow-sm pr-3 rounded-xl"
               >
                 <Image
                   src="/image.svg"
@@ -57,25 +58,17 @@ export default function RootLayout({
                 />
                 <p className="font-bold">{"gprime"}</p>
               </Link>
-              <div className="w-1/3 flex flex-row ">
-                <input
-                  placeholder="enter something to search"
-                  className={`py-2 w-10/12 bg-white rounded-l-xl ${Noto.className} antialiased justify-center text-center focus:w-full focus:bg-slate-900 focus:text-white transition-all`}
-                ></input>
-                <button className="bg-blue-200 px-4 py-2 rounded-r-xl transition-all hover:transition-all hover:text-white hover:bg-blue-600">
-                  Search
-                </button>
-              </div>
+              <Search placeholder="enter to search for something" />
               <div className="flex flex-row items-center justify-between space-x-2">
                 <Link
                   href="/cart/"
-                  className="bg-blue-200 px-4 p-2 rounded-xl transition-all hover:transition-all hover:text-white hover:bg-blue-600"
+                  className="bg-blue-200 px-4 p-3 rounded-xl transition-all hover:transition-all hover:text-white hover:bg-blue-600"
                 >
                   View Cart
                 </Link>
                 <div
                   className={clsx(
-                    "w-fit rounded-3xl transition-all px-3 py-2.5 antialiased",
+                    "w-fit rounded-2xl hover:rounded-xl  duration-500 hover:transition-all transition-all px-3.5 py-3 antialiased hover:bg-slate-900 hover:text-white hover:border hover:border-white border border-black shadow-sm  ",
                     {
                       "bg-black text-white shadow-xl translate-x-10":
                         getUserStatus() == true,
