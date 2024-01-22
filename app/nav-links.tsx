@@ -18,6 +18,7 @@ export const NavLinks = (): React.ReactNode => {
     },
     { href: "/cart/promotion", itemName: "promotion" },
     { href: "/orders", itemName: "orders" },
+    { href: "/binary-search", itemName: "binary search" },
   ];
   const pathname = usePathname();
   return (

@@ -41,7 +41,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={clsx(inter.className)}>
         <div>
           <div className="m-5 w-auto antialiased">
             <div className="flex  flex-1 flex-row justify-between bg-slate-900 drop-shadow-md p-3 rounded-2xl items-center ">
@@ -85,7 +85,18 @@ export default function RootLayout({
         <div className="flex flex-row my-2 items-center justify-center">
           <NavLinks />
         </div>
-        {children}
+        <div className="h-screen">{children}</div>
+        <footer className="bg-slate-900 pb-4 pt-2 flex flex-col justify-center items-center">
+          <h3 className="text-md text-slate-300 flex flex-row justify-center items-center">
+            <Image src={"./image.svg"} width={40} height={40} alt="h"></Image>
+            This is a sample playground for learning and experimenting with
+            NextJS
+          </h3>
+
+          <p className=" font-normal  text-sm text-slate-500">
+            Please register yourself with trademarks of c hof
+          </p>
+        </footer>
       </body>
     </html>
   );
